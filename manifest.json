@@ -10,5 +10,8 @@
   },
   "background": {
   	"scripts": ["home.js", "jquery-1.11.2.js"]
-  }
+  },
+  "permissions": [
+    "<all_urls>"
+  ]
 }
