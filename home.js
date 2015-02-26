@@ -9,7 +9,7 @@ $(document).ready(function(){
 });
 
 var xhr = new XMLHttpRequest();
-//xhr.open("GET", "http://runextbus.heroku.com/stop/Hill%20Center", true);
+xhr.open("GET", "http://runextbus.heroku.com/stop/Hill%20Center", true);
 xhr.onreadystatechange = function() {
   if (xhr.readyState == 4) {
     // innerText does not let the attacker inject HTML elements.
@@ -22,9 +22,10 @@ xhr.onreadystatechange = function() {
   }
 }
 //console.log("3");
-window.setInterval(function test(){ xhr.open("GET", "http://runextbus.heroku.com/stop/Hill%20Center", true); xhr.send(); }, 5000);      
-//console.log("4");
-//console.log("buses[0]");
+xhr.send();
+window.setInterval(function test(){ xhr.open("GET", "http://runextbus.heroku.com/stop/Hill%20Center", true); xhr.send(); }, 60000);      
+//console.log("4"); 
+////console.log("buses[0]");
 
 
 var buses = jQuery.parseJSON(xhr.responseText);
