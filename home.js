@@ -38,8 +38,10 @@ function printText(text){
 	busData = "";
 	for(i = 0; i < buses.length; i++){
 		if(buses[i].predictions != null){
+            if(buses[i].direction != 'To Allison Road Classrooms'){
 			//$("#buses").append("Time for next " + JSON.stringify(buses[i].title) + " bus: " + JSON.stringify(buses[i].predictions[0].minutes)  + " minutes" + '<br>');
 			busData = busData + "Time for next " + JSON.stringify(buses[i].title) + " bus: " + JSON.stringify(buses[i].predictions[0].minutes)  + " minutes" + '<br>';
+        }
 		}
 	}
 	//console.log(busData);
