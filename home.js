@@ -13,7 +13,36 @@ xhr.open("GET", "http://runextbus.heroku.com/stop/Hill%20Center", true);
 xhr.onreadystatechange = function() {
   if (xhr.readyState == 4) {
     // innerText does not let the attacker inject HTML elements.
-    document.getElementById("resp").innerText = xhr.responseText;
+    //console.log(xhr.responseText);
+    //console.log("1");
+    //document.getElementById("resp").innerText = xhr.responseText;
+    printText(xhr.responseText);
+    //console.log("2");
   }
 }
+//console.log("3");
 xhr.send();
+//console.log("4");
+//console.log("buses[0]");
+
+
+var buses = jQuery.parseJSON(xhr.responseText);
+
+//console.log(xhr.responseText);
+
+function printText(text){
+	//console.log(text);
+	var buses = jQuery.parseJSON(text);
+
+	for(i = 0; i < buses.length; i++){
+		if(buses[i].predictions != null){
+			$("#buses").append("Time for next " + JSON.stringify(buses[i].title) + " bus: " + JSON.stringify(buses[i].predictions[0].minutes)  + " minutes" + '<br>');
+		}
+	}
+
+
+
+	//$("#buses").append("Time for next " + JSON.stringify(buses[1].title) + " bus: " + JSON.stringify(buses[1].predictions[0].minutes)  + " minutes" + '<br>');
+	//$("#buses").append("Time for next C Bus: " + JSON.stringify(buses[2].predictions[0].minutes) + '<br>');
+	//$("#buses").append("Time for next REXB Bus: " + JSON.stringify(buses[3].predictions[0].minutes) + " minutes" + '<br>');
+}
