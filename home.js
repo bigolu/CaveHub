@@ -10,8 +10,38 @@ xhr.onreadystatechange = function() {
 xhr.send();
 window.setInterval(function test(){ xhr.open("GET", "http://runextbus.heroku.com/stop/Hill%20Center", true); xhr.send(); }, 60000);      
 
+dailyOps();
 
-var buses = jQuery.parseJSON(xhr.responseText);
+
+$("#events").append("Hacker Hour on Friday: Making Websites with style!");
+$("#events").append('&emsp;' + '&emsp;' + '&emsp;' + '&emsp;' + '&emsp;' + '&emsp;');
+$("#events").append("                 Hack Night on Monday: Learning to do stuff!");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function printText(text){
 	console.log("stuff");
@@ -25,4 +55,20 @@ function printText(text){
 		}
 	}
 	document.getElementById("buses").innerHTML = busData;
+}
+
+function dailyOps(){
+	var day = new Date();
+	if(day.getDate() == 0){
+		document.getElementById("hours").innerHTML = "Hours of operations: 3:00pm - 11:00pm" ;
+	}
+	else if(day.getDate() == 5){
+		document.getElementById("hours").innerHTML = "Hours of operations: 1:00pm - 3:00pm" ;
+	}
+	else if(day.getDate() == 6){
+		document.getElementById("hours").innerHTML = "Hours of operations: Closed" ;
+	}
+	else{
+		document.getElementById("hours").innerHTML = "Hours of operations: 1:00pm -11:00pm" ;
+	}
 }
