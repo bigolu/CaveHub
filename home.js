@@ -1,4 +1,5 @@
 
+
 var xhr = new XMLHttpRequest();
 xhr.open("GET", "http://runextbus.heroku.com/stop/Hill%20Center", true);
 xhr.onreadystatechange = function() {
@@ -18,6 +19,22 @@ $("#events").append('&emsp;' + '&emsp;' + '&emsp;' + '&emsp;' + '&emsp;' + '&ems
 $("#events").append("                 Hack Night on Monday: Learning to do stuff!");
 
 
+
+
+var test = [
+	{
+		"name": "This Guy",
+		"schedule": [[1,2,3], [-1], [4,5], [-1], [2,3,4,5], [2,3,4], [-1]]
+	            
+	},
+	{
+		"name": "That Guy",
+		"schedule": [[1,2,3], [-1], [4,5], [-1], [2,3,4,5], [2,3,4], [-1]]
+	            
+	}
+];
+
+whosWorking();
 
 
 
@@ -70,5 +87,20 @@ function dailyOps(){
 	}
 	else{
 		document.getElementById("hours").innerHTML = "Hours of operations: 1:00pm -11:00pm" ;
+	}
+}
+
+function whosWorking(){
+	var date = new Date();
+
+	for(i = 0; i<test.length; i++){
+		for(j = 0; j<test[i].schedule[date.getDay()].length; j++){
+
+			if(test[i].schedule[date.getDay()][j] == date.getHours() - 12){
+				//append that guys info to the whos on duty page
+				console.log(test[i].name);
+			}
+
+		}
 	}
 }
