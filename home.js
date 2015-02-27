@@ -1,5 +1,4 @@
 
-
 var xhr = new XMLHttpRequest();
 xhr.open("GET", "http://runextbus.heroku.com/stop/Hill%20Center", true);
 xhr.onreadystatechange = function() {
