@@ -1,0 +1,3 @@
+last bus blinking red
+animate logo
+fade to black when closed
