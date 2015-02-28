@@ -46,7 +46,7 @@ function whosWorking(){
 	for(i = 0; i < employeeSchedule.length; i++){
 		for(j = 0; j < employeeSchedule[i].schedule[date.getDay()].length; j++){
 			console.log("wtf?");
-			if(employeeSchedule[i].schedule[date.getDay()][j] != hour){
+			if(employeeSchedule[i].schedule[date.getDay()][j] == hour){
 				$("#employees").append(employeeSchedule[i].name + "<br>");
 				break;
 			}
