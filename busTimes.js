@@ -1,4 +1,4 @@
-//for api call to rutgers bus api
+//for get request to rutgers bus api
 var xhr = new XMLHttpRequest();
 xhr.open("GET", "http://runextbus.heroku.com/stop/Hill%20Center", true);
 xhr.onreadystatechange = function() {
@@ -35,8 +35,7 @@ function printBuses(busJSON){
 				if(buses[i].direction == 'To Allison Road Classrooms'){
 					$("#stillBuses").append("Time for next " + JSON.stringify(buses[i].title) + " (coming)" + " bus: " + JSON.stringify(buses[i].predictions[0].minutes)  + " minutes" + "<br>");
 	            }
-	            //gotta fix this if statement
-	            else if(buses[i].direction == 'THE OTHER REXB'){
+	            else if(buses[i].direction == 'To College Hall'){
 					$("#stillBuses").append("Time for next " + JSON.stringify(buses[i].title) + " (going)" + " bus: " + JSON.stringify(buses[i].predictions[0].minutes)  + " minutes" + "<br>");
 	            }
 	            else{
@@ -47,8 +46,7 @@ function printBuses(busJSON){
 				if(buses[i].direction == 'To Allison Road Classrooms'){
 					$("#lastBus").append("Time for next " + JSON.stringify(buses[i].title) + " (coming)" + " bus: " + JSON.stringify(buses[i].predictions[0].minutes)  + " minutes" + "<br>");
 	            }
-	            //gotta fix this if statement
-	            else if(buses[i].direction == 'THE OTHER REXB'){
+	            else if(buses[i].direction == 'To College Hall'){
 					$("#lastBus").append("Time for next " + JSON.stringify(buses[i].title) + " (going)" + " bus: " + JSON.stringify(buses[i].predictions[0].minutes)  + " minutes" + "<br>");
 	            }
 	            else{

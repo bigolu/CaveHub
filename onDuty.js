@@ -35,7 +35,6 @@ var employeeSchedule = [
 ];
 
 
-//This needs to be repeated hourly
 whosWorking();
 
 
