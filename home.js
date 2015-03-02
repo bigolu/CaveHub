@@ -14,7 +14,7 @@ var day = new Date();
 	document.getElementById("caveHours").innerHTML = hoursOfOps[day.getDay()];
 
 
-//$("html").css('background-color', 'rgba(0, 0, 0, .8)');
+
 
 
 

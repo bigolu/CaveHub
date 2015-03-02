@@ -1,5 +1,5 @@
 //Gotta hardcode in some stuff till we find  better way
-var takeoutMenu = [ ["TBD", "Open from: 5:30 pm - 10:00 pm"],
+var takeoutMenu = [ ["Deli Subs", "Open from: 5:30 pm - 10:00 pm"],
 	["Buffalo Chicken Wings", "Honey Glazed Chicken Wings", "Chicken Wings", "Macoroni and Cheese", "Salad", "Open from: 5:00 pm - Midnight"],
 	["Chicken Parmesan", "Eggplant Parmesan", "Pasta", "Burgers", "Open from: 5:00 pm - Midnight"],
 	["Fried Chicken Wings", "Buffalo Chicken Wings", "Chicken Nuggets", "Mashed Potatos", "Salad", "Open from: 5:00 pm - Midnight"],
@@ -14,7 +14,7 @@ var day = new Date();
 //display whats for takeout and hours for takeout
 	for(i = 0; i <takeoutMenu[day.getDay()].length; i++){
 		if(i < takeoutMenu[day.getDay()].length - 1){
-			$("#takeout").append(takeoutMenu[day.getDay()][i]);
+			$("#takeout").append(takeoutMenu[day.getDay()][i] + "<br>");
 		}
 		//the last index is the hours for takeout
 		else{
