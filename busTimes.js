@@ -32,7 +32,7 @@ function printBuses(busJSON){
 	for(i = 0; i < buses.length; i++){
 		if(buses[i].predictions != null){
 			if(buses[i].predictions.length > 1){
-				if(buses[i].direction == 'To Allison Road Classrooms'){
+				if(buses[i].direction == 'To Allison Road Classrooms' && buses[i].title == 'REX B'){
 					$("#stillBuses").append("Time for next " + JSON.stringify(buses[i].title) + " (coming)" + " bus: " + JSON.stringify(buses[i].predictions[0].minutes)  + " minutes" + "<br>");
 	            }
 	            else if(buses[i].direction == 'To College Hall'){
@@ -43,7 +43,7 @@ function printBuses(busJSON){
 	            }
 			}
 			else{
-				if(buses[i].direction == 'To Allison Road Classrooms'){
+				if(buses[i].direction == 'To Allison Road Classrooms' && && buses[i].title == 'REX B'){
 					$("#lastBus").append("Time for next " + JSON.stringify(buses[i].title) + " (coming)" + " bus: " + JSON.stringify(buses[i].predictions[0].minutes)  + " minutes" + "<br>");
 	            }
 	            else if(buses[i].direction == 'To College Hall'){
