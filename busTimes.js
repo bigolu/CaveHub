@@ -43,7 +43,7 @@ function printBuses(busJSON){
 	            }
 			}
 			else{
-				if(buses[i].direction == 'To Allison Road Classrooms' && && buses[i].title == 'REX B'){
+				if(buses[i].direction == 'To Allison Road Classrooms' && buses[i].title == 'REX B'){
 					$("#lastBus").append("Time for next " + JSON.stringify(buses[i].title) + " (coming)" + " bus: " + JSON.stringify(buses[i].predictions[0].minutes)  + " minutes" + "<br>");
 	            }
 	            else if(buses[i].direction == 'To College Hall'){
