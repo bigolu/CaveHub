@@ -1,8 +1,9 @@
 //Gotta hardcode in some stuff till we find  better way
+//I need to fix this later cuz some it is military time and some of it isn't
 var employeeSchedule = [
 	{
 		"name": "Jade",
-		"schedule": [[9,10], [-1], [9,10], [-1], [17,18,19,20], [-1], [-1]]	            
+		"schedule": [[21,22], [-1], [21,22], [-1], [17,18,19,20], [-1], [-1]]	            
 	},
 	{
 		"name": "Tim",
@@ -38,13 +39,51 @@ var employeeSchedule = [
 whosWorking();
 
 
+
+
+$('#menuIcon').click(function() {
+
+  $('#page').animate({
+      width: "30%"
+    }, 200);
+
+  $('#menuHalf').animate({
+      width: "70%"
+    }, 200);
+
+
+  for(i = 0; i < document.getElementsByClassName("page").length; i++){
+    document.getElementsByClassName("page")[i].setAttribute("style", "display: inline;");
+  }
+
+  });
+
+$('.page').click(function() {
+
+  for(i = 0; i < document.getElementsByClassName("page").length; i++){
+    document.getElementsByClassName("page")[i].setAttribute("style", "display: none;");
+  }
+
+  $('#menuHalf').animate({
+   width: ".5%"
+  }, 200);
+
+  $('#page').animate({
+    width: "99%"
+  }, 200);
+
+});
+
+
+
+
 function whosWorking(){
 	var date = new Date();
 	var hour = date.getHours();
 	for(i = 0; i < employeeSchedule.length; i++){
 		for(j = 0; j < employeeSchedule[i].schedule[date.getDay()].length; j++){
 			if(employeeSchedule[i].schedule[date.getDay()][j] == hour){
-				$("#employees").append(employeeSchedule[i].name + "<br>");
+				$("#employees").append("<li>" + employeeSchedule[i].name + "<br></li>");
 				break;
 			}
 		}

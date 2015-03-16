@@ -2,10 +2,10 @@
   "manifest_version": 2,
   "name": "CaveHub",
   "version": "1.0",
-  "description": "All Cave-related info.",
+  "description": "Lets you know whats goin' on around the cave.",
   "icons": {  "128" : "bigLogo.png" },
   "browser_action": {
-    "default_icon": "logo.png",
+    "default_icon": "tiny.png",
     "default_popup": "home.html"
   },
   "background": {

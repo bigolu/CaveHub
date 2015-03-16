@@ -1,40 +1,158 @@
 <html>
+<head>
+<script src="jquery-1.11.2.js"></script>
+<link href="bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="bootstrap/css/custom.css">
+<title>Takeout</title>
+</head>
+
+<body>
+
+<a href="home.html"><img id="topLogo" src="logo.jpg"></a>
+
+<div id="menuHalf">
+  <table class="table table-hover" id="menu">
+    <tr >
+    <td class="page">
+      <a href="home.html">Home</a>
+    </td>
+    </tr>
+
+    <tr>
+    <td class="page">
+      <a href="onDuty.html">On Duty</a>
+    </td>
+    </tr>
+
+    <tr>
+    <td class="page">
+      <a href="takeout.html">Takeout</a>
+    </td>
+    </tr>
+
+    <tr>
+    <td class="page">
+      <a href="busTimes.html">Bus Times</a>
+    </td>
+    </tr>
+
+  </table>
+</div>
+
+<div id="page">
+
+
+  <div id="menuIcon">
+  <i class="fa fa-bars fa-2x" id="bars"></i> 
+
+
+  <p id="menuName"> Menu </p>
+
+  </div>
+
+
+  <div id="pageInfo">
+
+
+  </div>
+
+
+
+</div>
+
+
+<script src="takeout.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+
+<html>
 
 <head>
 <script src="jquery-1.11.2.js"></script>
+<link href="bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="bootstrap/css/custom.css">
 <title>Takeout</title>
 <style>
 	html{
 		height: 400px;
-		width: 300px;
+		width: 270px;
 	}
  </style>
 </head>
 
 <body>
 
-<!-- back button goes here-->
-<a href="home.html" class="button">    <p> Back </p>    </a>
+<
+<div class="row text-center" style="margin-bottom:10px;">
+<div class="container">
 
-<!-- Nice takeout logo goes here -->
-
-
-<div id="takeout">
-
-<!-- What is being served -->
+<a href="home.html"><img src="logo.jpg"></a>
 
 </div>
+</div>
 
+
+
+
+<div class="btn-group">
+  <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+    <img src="menuIcon.png" id="menuIcon"> <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li><a href="busTimes.html"><p>Bus Times</p></a></li>
+    <li><a href="onDuty.html"><p>On Duty</p></a></li>
+    <li><a href="takeout.html"><p>Takeout</p></a></li>
+  </ul>
+</div>
+
+
+
+
+<div id="food">
+<ul id="takeout">
+
+
+</ul>
 
 <div id="takeoutHours">
+<h3>Hours</h3>
+<p>
 
-<!-- When takeout is open -->
-
+</p>
 </div>
 
 
-
-
+<script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="takeout.js"></script>
 </body>
 </html>
+
+-->

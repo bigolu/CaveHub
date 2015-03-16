@@ -1,45 +1,67 @@
 <html>
-
 <head>
 <script src="jquery-1.11.2.js"></script>
-<script type="text/javascript" src="../jquery.dim-background.js"></script>
+<link href="bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="bootstrap/css/custom.css">
 <title>Home</title>
-<style>
-	html{
-		height: 400px;
-		width: 300px;
-	}
- </style>
 </head>
 
 <body>
-<div id="whole_page">
 
-<!-- the logo will go here -->
+<a href="home.html"><img id="topLogo" src="logo.jpg"></a>
 
-<!-- Events Feed -->
-<marquee id="events" behavior="scroll" direction="right" onmouseover="this.stop();" onmouseout="this.start();">
-            <p>Events feed coming soon!</p>
-</marquee>
+<div id="menuHalf">
+	<table class="table table-hover" id="menu">
+		<tr >
+		<td class="page">
+			<a href="home.html">Home</a>
+		</td>
+		</tr>
 
-<!-- Roberto's gonna make the tabs for the different sections and they will go here -->
-<a href="busTimes.html" class="button">    <p> Bus Times </p>    </a>
-<a href="takeout.html" class="button">    <p> Takeout </p>     </a>
-<a href="onDuty.html" class="button">    <p> Who's On Duty? </p>     </a>
+		<tr>
+		<td class="page">
+			<a href="onDuty.html">On Duty</a>
+		</td>
+		</tr>
+
+		<tr>
+		<td class="page">
+			<a href="takeout.html">Takeout</a>
+		</td>
+		</tr>
+
+		<tr>
+		<td class="page">
+			<a href="busTimes.html">Bus Times</a>
+		</td>
+		</tr>
+
+	</table>
+</div>
+
+<div id="page">
 
 
+	<div id="menuIcon">
+	<i class="fa fa-bars fa-2x" id="bars"></i> 
 
 
+	<p id="menuName"> Menu </p>
 
-<!-- Hours of operations will go at the bottom-->
-<div id="caveHours">
+	</div>
+
+
+	<div id="pageInfo">
+
+
+	</div>
+
 
 
 </div>
 
-
-</div>
 
 <script src="home.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

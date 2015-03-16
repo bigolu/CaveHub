@@ -1,38 +1,166 @@
 <html>
-
 <head>
 <script src="jquery-1.11.2.js"></script>
+<link href="bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="bootstrap/css/custom.css">
 <title>Bus Times</title>
-<style>
-	html{
-		height: 400px;
-		width: 300px;
-	}
- </style>
 </head>
 
 <body>
 
-<!-- back button goes here -->
-<a href="home.html" class="button">    <p> Back </p>    </a>
+<a href="home.html"><img id="topLogo" src="logo.jpg"></a>
 
-<!-- Nice title goes here -->
+<div id="menuHalf">
+	<table class="table table-hover" id="menu">
+		<tr >
+		<td class="page">
+			<a href="home.html">Home</a>
+		</td>
+		</tr>
 
-<div id="busTimes">
+		<tr>
+		<td class="page">
+			<a href="onDuty.html">On Duty</a>
+		</td>
+		</tr>
 
-<!-- bus times go here if there are more buses -->
+		<tr>
+		<td class="page">
+			<a href="takeout.html">Takeout</a>
+		</td>
+		</tr>
+
+		<tr>
+		<td class="page">
+			<a href="busTimes.html">Bus Times</a>
+		</td>
+		</tr>
+
+	</table>
+</div>
+
+<div id="page">
+
+
+	<div id="menuIcon">
+	<i class="fa fa-bars fa-2x" id="bars"></i> 
+
+
+	<p id="menuName"> Menu </p>
+
+	</div>
+
+
+	<div id="pageInfo">
+
+
+	</div>
+
+
+
+</div>
+
+
+<script src="busTimes.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+<html>
+
+<head>
+<script src="jquery-1.11.2.js"></script>
+<link href="bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="bootstrap/css/custom.css">
+<title>Home</title>
+</head>
+
+<body>
+
+
+
+<div class="row text-center" style="margin-bottom:10px;">
+<div class="container">
+
+<a href="home.html"><img src="logo.jpg"></a>
+
+</div>
+</div>
+
+
+
+
+<div class="btn-group">
+  <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+    <img src="menuIcon.png" id="menuIcon"> <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li><a href="busTimes.html">Bus Times</a></li>
+    <li><a href="onDuty.html">On Duty</a></li>
+    <li><a href="takeout.html">Takeout</a></li>
+  </ul>
+</div>
+
+
+
+<div id="bus">
 <ul id="stillBuses">
 
 
 </ul>
 
-<!-- bus times go here if it is the last bus so that we can make these ones flash in red or something -->
+
 <ul id="lastBus">
 
 
 </ul>
-
-
 
 </div>
 
@@ -40,6 +168,16 @@
 
 
 
+
+
+
+
+
+
+
+
+<script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="busTimes.js"></script>
 </body>
 </html>
+-->

@@ -1,0 +1,91 @@
+html{
+	height: 360px;
+	width: 270px;
+}
+
+body{
+	height: 360px;
+	width: 270px;
+}
+
+#topLogo{
+	height: 25%;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+#menuHalf{
+	background-image: url("black.jpg");
+	background-size: cover;
+	height: 75%;
+	width: .5%;
+	float: left;
+}
+
+
+#menu{
+	table-layout: fixed;
+	height: 50%;
+	float: left;
+	border: 1px solid;
+	margin: 0 !important;
+	display: inline !important;
+}
+
+tr{
+	height: 20%;
+	border-bottom: 1px solid #ddd;
+}
+
+.page{
+	width: auto;
+	word-wrap: break-word;
+	display: inherit;
+	color: red;
+	display: none;
+}
+
+.page a{
+	color: #F41A22 !important;
+}
+
+
+#page{
+	width: 99%;
+	height: 75%;
+	float: right;
+}
+
+#menuIcon{
+	border-bottom: 1px solid #9B9999;
+	height: 10%;
+	cursor: pointer;
+	cursor: hand;
+}
+
+#bars{
+	height: 100%;
+}
+
+#menuName{
+	height: 100%;
+	display: inline;
+	position: relative;
+	vertical-align: top;
+	top: 4px;
+	margin: 0 !important;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+#pageInfo{
+	height: 90%;
+}
+
+
+
+/* End of CSS for basic structure of every page */
+
+

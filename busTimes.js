@@ -10,6 +10,38 @@ xhr.send();
 window.setInterval(function test(){ xhr.open("GET", "http://runextbus.heroku.com/stop/Hill%20Center", true); xhr.send(); }, 6000);      
 
 
+$('#menuIcon').click(function() {
+
+  $('#page').animate({
+      width: "30%"
+    }, 200);
+
+  $('#menuHalf').animate({
+      width: "70%"
+    }, 200);
+
+
+  for(i = 0; i < document.getElementsByClassName("page").length; i++){
+    document.getElementsByClassName("page")[i].setAttribute("style", "display: inline;");
+  }
+
+  });
+
+$('.page').click(function() {
+
+  for(i = 0; i < document.getElementsByClassName("page").length; i++){
+    document.getElementsByClassName("page")[i].setAttribute("style", "display: none;");
+  }
+
+  $('#menuHalf').animate({
+   width: ".5%"
+  }, 200);
+
+  $('#page').animate({
+    width: "99%"
+  }, 200);
+
+});
 
 
 
@@ -33,24 +65,24 @@ function printBuses(busJSON){
 		if(buses[i].predictions != null){
 			if(buses[i].predictions.length > 1){
 				if(buses[i].direction == 'To Allison Road Classrooms' && buses[i].title == 'REX B'){
-					$("#stillBuses").append("Time for next " + JSON.stringify(buses[i].title) + " (coming)" + " bus: " + JSON.stringify(buses[i].predictions[0].minutes)  + " minutes" + "<br>");
+					$("#stillBuses").append("<li>Time for next " + JSON.stringify(buses[i].title) + " (Inbound)" + " bus: " + JSON.stringify(buses[i].predictions[0].minutes)  + " minutes</li>" + "<br>");
 	            }
 	            else if(buses[i].direction == 'To College Hall'){
-					$("#stillBuses").append("Time for next " + JSON.stringify(buses[i].title) + " (going)" + " bus: " + JSON.stringify(buses[i].predictions[0].minutes)  + " minutes" + "<br>");
+					$("#stillBuses").append("<li>Time for next " + JSON.stringify(buses[i].title) + " (Outbound)" + " bus: " + JSON.stringify(buses[i].predictions[0].minutes)  + " minutes</li>" + "<br>");
 	            }
 	            else{
-	            	$("#stillBuses").append("Time for next " + JSON.stringify(buses[i].title) + " bus: " + JSON.stringify(buses[i].predictions[0].minutes)  + " minutes" + "<br>");
+	            	$("#stillBuses").append("<li>Time for next " + JSON.stringify(buses[i].title) + " bus: " + JSON.stringify(buses[i].predictions[0].minutes)  + " minutes</li>" + "<br>");
 	            }
 			}
 			else{
 				if(buses[i].direction == 'To Allison Road Classrooms' && buses[i].title == 'REX B'){
-					$("#lastBus").append("Time for next " + JSON.stringify(buses[i].title) + " (coming)" + " bus: " + JSON.stringify(buses[i].predictions[0].minutes)  + " minutes" + "<br>");
+					$("#lastBus").append("<li>Time for next " + JSON.stringify(buses[i].title) + " (Inbound)" + " bus: " + JSON.stringify(buses[i].predictions[0].minutes)  + " minutes</li>" + "<br>");
 	            }
 	            else if(buses[i].direction == 'To College Hall'){
-					$("#lastBus").append("Time for next " + JSON.stringify(buses[i].title) + " (going)" + " bus: " + JSON.stringify(buses[i].predictions[0].minutes)  + " minutes" + "<br>");
+					$("#lastBus").append("<li>Time for next " + JSON.stringify(buses[i].title) + " (Outbound)" + " bus: " + JSON.stringify(buses[i].predictions[0].minutes)  + " minutes</li>" + "<br>");
 	            }
 	            else{
-	            	$("#lastBus").append("Time for next " + JSON.stringify(buses[i].title) + " bus: " + JSON.stringify(buses[i].predictions[0].minutes)  + " minutes" + "<br>");
+	            	$("#lastBus").append("<li>Time for next " + JSON.stringify(buses[i].title) + " bus: " + JSON.stringify(buses[i].predictions[0].minutes)  + " minutes</li>" + "<br>");
 	            }
 			}
 		}

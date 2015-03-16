@@ -11,10 +11,46 @@ var takeoutMenu = [ ["Sandwiches w/ Assorted deli meats", "Open from: 5:30 pm - 
 
 var day = new Date();
 
+
+$('#menuIcon').click(function() {
+
+  $('#page').animate({
+      width: "30%"
+    }, 200);
+
+  $('#menuHalf').animate({
+      width: "70%"
+    }, 200);
+
+
+  for(i = 0; i < document.getElementsByClassName("page").length; i++){
+    document.getElementsByClassName("page")[i].setAttribute("style", "display: inline;");
+  }
+
+  });
+
+$('.page').click(function() {
+
+  for(i = 0; i < document.getElementsByClassName("page").length; i++){
+    document.getElementsByClassName("page")[i].setAttribute("style", "display: none;");
+  }
+
+  $('#menuHalf').animate({
+   width: ".5%"
+  }, 200);
+
+  $('#page').animate({
+    width: "99%"
+  }, 200);
+
+});
+
+
+
 //display whats for takeout and hours for takeout
 	for(i = 0; i <takeoutMenu[day.getDay()].length; i++){
 		if(i < takeoutMenu[day.getDay()].length - 1){
-			$("#takeout").append(takeoutMenu[day.getDay()][i] + "<br>");
+			$("#takeout").append("<li>" + takeoutMenu[day.getDay()][i] + "<br></li>");
 		}
 		//the last index is the hours for takeout
 		else{
