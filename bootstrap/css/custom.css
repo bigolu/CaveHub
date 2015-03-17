@@ -97,6 +97,7 @@ tr{
 #data{
 	height: 86%;
 	display: table;
+	width: 100%;
 }
 
 /* End of CSS for basic structure of every page */
@@ -151,6 +152,7 @@ tr{
 	text-align: center;
 	display:table-cell;
     vertical-align:middle;
+    padding-left: 30px;
 }
 
 #tempInfo{
@@ -161,7 +163,7 @@ tr{
 
 .extraInfo{
 	height: 33%;
-	margin-left: 20%;
+	margin-left: 10%;
 	font-weight: 600;
 }
 
@@ -169,3 +171,10 @@ tr{
  font-size: 70px;
 
 }
+
+#tempInfo{
+	padding-top: 2%;
+}
+
+/* End of CSS for home page */
+

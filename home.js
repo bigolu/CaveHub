@@ -21,7 +21,14 @@ for(i = 0; i < document.getElementsByClassName("extraInfo").length; i++){
 
 
 
-window.setInterval(function test(){ xhr.open("GET", "http://api.openweathermap.org/data/2.5/weather?q=Piscataway,us&APPID=e0245a9a802295f4bf2202c6f0842de5", true); xhr.send(); }, 3600000);
+window.setInterval(function test(){ xhr.open("GET", "http://api.openweathermap.org/data/2.5/weather?q=Piscataway,us&APPID=e0245a9a802295f4bf2202c6f0842de5", true);
+$("#temp").empty();
+$("#temp").append("Loading...");
+for(i = 0; i < document.getElementsByClassName("extraInfo").length; i++){
+    document.getElementsByClassName("extraInfo")[i].innerHTML = "Loading...";
+  }
+xhr.send();
+}, 3600000);
 
 
 
@@ -115,9 +122,13 @@ function displayWeather(weatherJSON){
   loTemp = Math.round(((loTemp - 273.15)*1.8) + 32.0);
 
   temp = '<p id="tempNum">' + temp +  unescape('%B0') + "</p>";
-  $("#temp").append(temp);
+  hiTemp = "High: " + hiTemp + unescape('%B0');
+  loTemp = "Low: " + loTemp + unescape('%B0');
 
+  $("#temp").append(temp);
   $("#description").append(weather.weather[0].description);
+  $("#hi").append(hiTemp);
+  $("#lo").append(loTemp);
 
 }
 
