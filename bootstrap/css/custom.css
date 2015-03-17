@@ -7,7 +7,7 @@ body{
 	height: 360px;
 	width: 270px;
 }
-
+	
 #topLogo{
 	height: 25%;
 	width: 100%;
@@ -45,6 +45,7 @@ tr{
 	display: inherit;
 	color: red;
 	display: none;
+	font-weight: 600;
 }
 
 .page a{
@@ -86,6 +87,85 @@ tr{
 	height: 90%;
 }
 
+#title{
+	text-align: center;
+	margin-top: 3px;
+	font-weight: bold;
+	height: 10%;
+}
+
+#data{
+	height: 86%;
+	display: table;
+}
+
 /* End of CSS for basic structure of every page */
 
+#foodHoursTitle{
+	font-weight: bold;
+	margin: 0;
+	width: 20%;
+	float: left;
+}
 
+#foodHoursBox{
+	display: table-row;
+	vertical-align: bottom;
+	height: 10%;
+}
+
+#foodHours{
+	height: 20px;
+	width: 80%;
+	float: right;
+	text-align: right;
+	font-weight: 600;
+}
+
+#food{
+	font-weight: 600;
+}
+
+/* End of CSS for takeout page */
+
+#employees{
+	font-size: 20px;
+}
+
+/* End of CSS for onDuty page */
+
+#caveHoursBox{
+	display: table-row;
+	vertical-align: bottom;
+	height: 10%;
+}
+
+#caveHours{
+	font-weight: 600;
+	font-size: 16px;
+}
+#temp{
+	height: 80%;
+	width: 50%;
+	float: left;
+	text-align: center;
+	display:table-cell;
+    vertical-align:middle;
+}
+
+#tempInfo{
+	height: 80%;
+	width: 50%;
+	float: right;
+}
+
+.extraInfo{
+	height: 33%;
+	margin-left: 20%;
+	font-weight: 600;
+}
+
+#tempNum{
+ font-size: 70px;
+
+}

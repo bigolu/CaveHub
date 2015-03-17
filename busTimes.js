@@ -12,6 +12,8 @@ window.setInterval(function test(){ xhr.open("GET", "http://runextbus.heroku.com
 
 $('#menuIcon').click(function() {
 
+  document.getElementById("page").setAttribute("style", "display: none;");
+
   $('#page').animate({
       width: "30%"
     }, 200);
@@ -40,6 +42,8 @@ $('.page').click(function() {
   $('#page').animate({
     width: "99%"
   }, 200);
+
+  document.getElementById("page").setAttribute("style", "display: block;");
 
 });
 
