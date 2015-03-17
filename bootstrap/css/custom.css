@@ -29,7 +29,6 @@ body{
 	table-layout: fixed;
 	height: 50%;
 	float: left;
-	border: 1px solid;
 	margin: 0 !important;
 	display: inline !important;
 }
@@ -60,7 +59,6 @@ tr{
 }
 
 #menuIcon{
-	border-bottom: 1px solid #9B9999;
 	height: 10%;
 	cursor: pointer;
 	cursor: hand;
@@ -69,6 +67,8 @@ tr{
 #bars{
 	height: 60%;
 	vertical-align: bottom;
+	position: relative;
+	top: 1px;
 }
 
 #menuName{
@@ -84,7 +84,8 @@ tr{
 }
 
 #pageInfo{
-	height: 90%;
+	height: 100% !important;
+	overflow: auto;
 }
 
 #title{
@@ -178,3 +179,8 @@ tr{
 
 /* End of CSS for home page */
 
+#busTimes{
+	margin: 0;
+}
+
+/* End of CSS for busTimes page */

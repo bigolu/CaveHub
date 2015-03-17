@@ -39,6 +39,17 @@ var employeeSchedule = [
 whosWorking();
 
 
+$(document).ready(
+  function() { 
+    $('#pageInfo').slimScroll({
+    color: '#000000',
+    size: '10px',
+    height: '91%',
+    alwaysVisible: true
+    });
+  }
+);
+
 
 
 $('#menuIcon').click(function() {
@@ -58,6 +69,8 @@ $('#menuIcon').click(function() {
     document.getElementsByClassName("page")[i].setAttribute("style", "display: inline;");
   }
 
+  $("#menuHalf").dimBackground();
+
   });
 
 $('.page').click(function() {
@@ -76,7 +89,36 @@ $('.page').click(function() {
 
   document.getElementById("page").setAttribute("style", "display: block;");
 
+  $("#menuHalf").undim();
+
 });
+
+$('html').click(function() {
+  console.log($("#menuHalf").width());
+  if($("#menuHalf").width() > 10){
+    
+  
+
+  for(i = 0; i < document.getElementsByClassName("page").length; i++){
+    document.getElementsByClassName("page")[i].setAttribute("style", "display: none;");
+  }
+
+  $('#menuHalf').animate({
+   width: ".5%"
+  }, 200);
+
+  $('#page').animate({
+    width: "99%"
+  }, 200);
+
+  document.getElementById("page").setAttribute("style", "display: block;");
+
+  $("#menuHalf").undim();
+
+  }
+});
+
+
 
 
 

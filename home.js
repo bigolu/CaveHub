@@ -20,6 +20,25 @@ for(i = 0; i < document.getElementsByClassName("extraInfo").length; i++){
   }
 
 
+$(document).ready(
+  function() { 
+    $('#pageInfo').slimScroll({
+    color: '#000000',
+    size: '10px',
+    height: '91%',
+    alwaysVisible: true
+    });
+  }
+);
+
+
+
+
+
+
+
+
+
 
 window.setInterval(function test(){ xhr.open("GET", "http://api.openweathermap.org/data/2.5/weather?q=Piscataway,us&APPID=e0245a9a802295f4bf2202c6f0842de5", true);
 $("#temp").empty();
@@ -29,29 +48,6 @@ for(i = 0; i < document.getElementsByClassName("extraInfo").length; i++){
   }
 xhr.send();
 }, 3600000);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -73,6 +69,8 @@ $('#menuIcon').click(function() {
     document.getElementsByClassName("page")[i].setAttribute("style", "display: inline;");
   }
 
+  $("#menuHalf").dimBackground();
+
   });
 
 $('.page').click(function() {
@@ -91,6 +89,33 @@ $('.page').click(function() {
 
   document.getElementById("page").setAttribute("style", "display: block;");
 
+  $("#menuHalf").undim();
+
+});
+
+$('html').click(function() {
+  console.log($("#menuHalf").width());
+  if($("#menuHalf").width() > 10){
+    
+  
+
+  for(i = 0; i < document.getElementsByClassName("page").length; i++){
+    document.getElementsByClassName("page")[i].setAttribute("style", "display: none;");
+  }
+
+  $('#menuHalf').animate({
+   width: ".5%"
+  }, 200);
+
+  $('#page').animate({
+    width: "99%"
+  }, 200);
+
+  document.getElementById("page").setAttribute("style", "display: block;");
+
+  $("#menuHalf").undim();
+
+  }
 });
 
 
