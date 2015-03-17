@@ -11,19 +11,6 @@ var takeoutMenu = [ ["Sandwiches w/ Assorted deli meats", "5:30 pm - 10:00 pm"],
 
 var day = new Date();
 
-$(document).ready(
-  function() { 
-    $('#pageInfo').slimScroll({
-    color: '#000000',
-    size: '10px',
-    height: '91%',
-    alwaysVisible: true
-    });
-  }
-);
-
-
-
 
 
 $('#menuIcon').click(function() {
@@ -91,8 +78,6 @@ $('html').click(function() {
 
   }
 });
-
-
 
 
 

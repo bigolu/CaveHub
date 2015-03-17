@@ -20,26 +20,6 @@ for(i = 0; i < document.getElementsByClassName("extraInfo").length; i++){
   }
 
 
-$(document).ready(
-  function() { 
-    $('#pageInfo').slimScroll({
-    color: '#000000',
-    size: '10px',
-    height: '91%',
-    alwaysVisible: true
-    });
-  }
-);
-
-
-
-
-
-
-
-
-
-
 window.setInterval(function test(){ xhr.open("GET", "http://api.openweathermap.org/data/2.5/weather?q=Piscataway,us&APPID=e0245a9a802295f4bf2202c6f0842de5", true);
 $("#temp").empty();
 $("#temp").append("Loading...");
@@ -156,5 +136,3 @@ function displayWeather(weatherJSON){
   $("#lo").append(loTemp);
 
 }
-
-

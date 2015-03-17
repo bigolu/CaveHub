@@ -84,8 +84,7 @@ tr{
 }
 
 #pageInfo{
-	height: 100% !important;
-	overflow: auto;
+	height: 90% !important;
 }
 
 #title{
@@ -181,6 +180,10 @@ tr{
 
 #busTimes{
 	margin: 0;
+}
+
+#thisPageInfo{
+	height: 100% !important;
 }
 
 /* End of CSS for busTimes page */
