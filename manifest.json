@@ -2,15 +2,15 @@
   "manifest_version": 2,
   "name": "CaveHub",
   "short_name": "CaveHub",
-  "version": "2.0",
+  "version": "3.0",
   "description": "Lets you know whats goin' on around the cave.",
-  "icons": {  "128" : "bigLogo.png" },
+  "icons": {  "128" : "images/bigLogo.png" },
   "browser_action": {
-    "default_icon": "tiny.png",
-    "default_popup": "home.html"
+    "default_icon": "images/tiny.png",
+    "default_popup": "views/home.html"
   },
   "background": {
-  	"scripts": ["home.js", "jquery-1.11.2.js"]
+  	"scripts": ["scripts/home.js", "scripts/jquery-1.11.2.js"]
   },
   "permissions": [
     "<all_urls>"

@@ -1,27 +1,32 @@
 html{
-	height: 360px;
-	width: 270px;
+	height: 320px;
+	width: 250px;
 }
 
 body{
-	height: 360px;
-	width: 270px;
+	height: 320px;
+	width: 250px;
 }
-	
+
 #topLogo{
 	height: 25%;
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 
 #menuHalf{
-	background-image: url("black.jpg");
+	background-color: white;
 	background-size: cover;
 	height: 75%;
 	width: .5%;
 	float: left;
+	display: none;
 }
 
 
@@ -42,13 +47,13 @@ tr{
 	width: auto;
 	word-wrap: break-word;
 	display: inherit;
-	color: red;
+	color: #333;
 	display: none;
 	font-weight: 600;
 }
 
 .page a{
-	color: #F41A22 !important;
+	color: #333 !important;
 }
 
 
@@ -56,6 +61,7 @@ tr{
 	width: 99%;
 	height: 75%;
 	float: right;
+	padding-left: 10px;
 }
 
 #menuIcon{
@@ -89,9 +95,12 @@ tr{
 
 #title{
 	text-align: center;
-	margin-top: 3px;
+	margin-top: 8px;
 	font-weight: bold;
 	height: 10%;
+	margin-bottom: 10px;
+	color: #C01D26;
+	font-size: 18px;
 }
 
 #data{
@@ -125,12 +134,14 @@ tr{
 
 #food{
 	font-weight: 600;
+	padding-left: 10px;
 }
 
 /* End of CSS for takeout page */
 
 #employees{
 	font-size: 20px;
+	padding-left: 10px;
 }
 
 /* End of CSS for onDuty page */
@@ -139,6 +150,7 @@ tr{
 	display: table-row;
 	vertical-align: bottom;
 	height: 10%;
+
 }
 
 #caveHours{
@@ -152,7 +164,7 @@ tr{
 	text-align: center;
 	display:table-cell;
     vertical-align:middle;
-    padding-left: 30px;
+    padding-left: 10px;
 }
 
 #tempInfo{
@@ -179,7 +191,9 @@ tr{
 /* End of CSS for home page */
 
 #busTimes{
-	margin: 0;
+	margin-left: 0 !important;
+	list-style: none;
+	padding-left: 10px;
 }
 
 #thisPageInfo{
