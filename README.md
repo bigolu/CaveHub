@@ -1,4 +1,13 @@
 # CaveHub
-This a chrome extension that gives you info about what going on around the cave such as the weather, bus times, takeout, etc.....
+A chrome extension that gives you info about what going on around the cave (Hill 252):
+- Events such as Hack Night and Hacker Hour
+- Who is currently on duty
+- Bus times to the hill center
+- Whats for takeout
+- The weather
 
-Download for free at: https://chrome.google.com/webstore/detail/cavehub/nfjldjkhghgdaabjmcffhhpkfpmjdckd
+##Preview
+![alt tag](https://raw.githubusercontent.com/biggie96/CaveHub/master/images/prev1.png)
+
+Download for free at the
+<a href="https://chrome.google.com/webstore/detail/cavehub/nfjldjkhghgdaabjmcffhhpkfpmjdckd" target="_blank">chrome appstore</a> !
