@@ -40,40 +40,7 @@ function printBuses(busJSON){
       }
     }
 
-    //try to use h_EE()
-    if(buses[i].title == 'H'){
-      var estimate = h_EE(buses, i);
-      times += (estimate != null) ? estimate : '';
-    }
-
     $("#busTimes").append(times); //add bus to page
-  }
-}
-
-/* Estimates a wait time at the Rutgers Student Center (RSC) for the EE bus to get to cook
-* if you take current H bus coming to Hill Center
-*/
-function h_EE(buses, h){
-  var time_to_RSC = 10; //not sure how to acurrately calculate this, but I figure it takes 10 minutes to get to the RSC from Hill
-  var time_for_H = Number(buses[h].predictions[0].minutes); //time until next h bus arrives at hill
-
-  for(var i = 0; i < buses.length; i++){
-    if(buses[i].title == 'EE'){
-      if(buses[i].predictions == null){ //no EE coming so estimations cant be made
-        return null;
-      }
-
-      for(var j = 0; j < buses[i].predictions.length; j++){
-        //This number represents how long you would wait for an EE at the RSC if you took the H bus currently coming to Hill
-        var wait_time = Number(buses[i].predictions[j].minutes) - (time_for_H + time_to_RSC);
-
-        if(wait_time > 3){ //doable
-          return '<li class="times"><b>Wait Time for EE at RSC: ' + wait_time + " minutes</li>";
-        }
-      }
-
-      return null;
-    }
   }
 }
 
