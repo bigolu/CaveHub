@@ -49,7 +49,7 @@ function whosWorking(){
 	for(i = 0; i < employees.length; i++){
 		if(employees[i].schedule[day].indexOf(hour) != -1){ //they're currently on the clock
 			someone_working = true;
-			$("#employees").append("<li>" + employeeSchedule[i].name + "<br></li>"); //append person to list of employees
+			$("#employees").append("<li>" + employees[i].name + "<br></li>"); //append person to list of employees
 		}
 	}
 
