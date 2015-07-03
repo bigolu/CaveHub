@@ -99,7 +99,7 @@ function displayWeather(weatherJSON){
 
 /* Populates ticker with events */
 function show_events(){
-  var event_str = ''; //hold all events to be displayed in the ticker
+  var event_str = ''; //holds all events to be displayed in the ticker
   for(var i =0; i < events.length; i++){
     var now = new Date().getTime(); //get amount time elapsed since 01/1970 in milliseconds
 
@@ -133,7 +133,7 @@ function show_events(){
     event_str += ' ' + events[i].time;
     //add space if theres another event
     if(i < events.length - 1){
-      event_str += ',&nbsp; | &nbsp;';
+      event_str += '&nbsp; | &nbsp;';
     }
   }
 

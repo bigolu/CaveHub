@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "CaveHub",
   "short_name": "CaveHub",
-  "version": "3.0",
+  "version": "3.1",
   "description": "Lets you know whats goin' on around the cave.",
   "icons": {  "128" : "images/bigLogo.png" },
   "browser_action": {
