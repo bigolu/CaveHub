@@ -2,6 +2,7 @@
 function printBuses(busJSON){
   var buses = jQuery.parseJSON(busJSON);
   $("#busTimes").empty(); //remove 'loading' text
+  var bus_running = false; //set to true if at least one bus is running
 
   for(i = 0; i < buses.length; i++){
     var times = "";
@@ -40,7 +41,14 @@ function printBuses(busJSON){
       }
     }
 
-    $("#busTimes").append(times); //add bus to page
+    if(times != ""){
+      $("#busTimes").append(times); //add bus to page
+      bus_running = true;
+    }
+  }
+
+  if(!bus_running){
+    $("#busTimes").append("There are no buses coming to the Hill Center right now."); 
   }
 }
 
