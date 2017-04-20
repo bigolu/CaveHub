@@ -10,7 +10,7 @@
     "default_popup": "views/home.html"
   },
   "background": {
-  	"scripts": ["scripts/home.js", "scripts/jquery-1.11.2.js"]
+  	"scripts": ["scripts/jquery-1.11.2.js", "scripts/xml2json.js", "scripts/home.js", "scripts/busTimes.js"]
   },
   "permissions": [
     "<all_urls>"

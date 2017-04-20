@@ -1,6 +1,8 @@
 /* populates page with bus scheudule */
-function printBuses(busJSON){
-  var buses = jQuery.parseJSON(busJSON);
+function printBuses(busXML){
+  // this awful thing converts the XML string to a JSON object
+  var buses = jQuery.parseJSON(jQuery.parseJSON(JSON.stringify(xml2json(jQuery.parseXML(busXML))).replace(/\@/g, "").replace(/undefined/g, ""))).body.predictions;
+
   $("#busTimes").empty(); //remove 'loading' text
   var bus_running = false; //set to true if at least one bus is running
 
@@ -8,34 +10,34 @@ function printBuses(busJSON){
     var times = "";
 
     //this bus isn't running right now
-    if(buses[i].predictions == null){
+    if(buses[i].hasOwnProperty("dirTitleBecauseNoPredictions")){
       continue;
     }
 
     /* distinguish between inbound and outbound REXB buses */
-    if(buses[i].direction == 'To Allison Road Classrooms' && buses[i].title == 'REX B'){
-      times = '<li class="times"><b>' + buses[i].title + " (Inbound):</b>";
+    if(buses[i].direction.title == 'To Allison Road Classrooms' && buses[i].routeTitle == 'REX B'){
+      times = '<li class="times"><b>' + buses[i].routeTitle + " (Inbound):</b>";
     }
-    else if(buses[i].direction == 'To College Hall'){
-      times = '<li class="times"><b>' + buses[i].title + " (Outbound):</b>";
+    else if(buses[i].direction.title == 'To College Hall'){
+      times = '<li class="times"><b>' + buses[i].routeTitle + " (Outbound):</b>";
     }
     else{
-      times = '<li class="times"><b>' + buses[i].title + ":</b>";
+      times = '<li class="times"><b>' + buses[i].routeTitle + ":</b>";
     }
 
     //last bus
-    if(buses[i].predictions.length == 1){
+    if(buses[i].direction.prediction.length == 1){
       //show 'less <1 minute' if appropriate
-      times += (Number(buses[i].predictions[0].seconds) < 60) ? " <1 minute (Last Bus)</li>" : (" " + buses[i].predictions[0].minutes + " minutes (Last Bus)</li>");
+      times += (Number(buses[i].direction.prediction[0].seconds) < 60) ? " <1 minute (Last Bus)</li>" : (" " + buses[i].direction.prediction[0].minutes + " minutes (Last Bus)</li>");
     }
 
     else{
-      for(j = 0; j < buses[i].predictions.length; j++){
+      for(j = 0; j < buses[i].direction.prediction.length; j++){
         //show 'less <1 minute' if appropriate
-        times += (Number(buses[i].predictions[j].seconds) < 60) ? " <1 minute</li>" : (" " + buses[i].predictions[j].minutes + " minutes</li>");
+        times += (Number(buses[i].direction.prediction[j].seconds) < 60) ? " <1 minute</li>" : (" " + buses[i].direction.prediction[j].minutes + " minutes</li>");
 
         //if there is another bus after this, a comma will be after this one
-        if(j != buses[i].predictions.length - 1){
+        if(j != buses[i].direction.prediction.length - 1){
           times += ',';
         }
       }
@@ -65,7 +67,7 @@ $(document).ready(
 
     /* get bus data */
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://runextbus.heroku.com/stop/Hill%20Center", true);
+    xhr.open("GET", "http://webservices.nextbus.com/service/publicXMLFeed?a=rutgers&command=predictionsForMultiStops&stops=h|null|hilln&stops=rexb|rexb_outbound|hillw&stops=rexb|rexb_inbound|hilln&stops=a|null|hillw&stops=wknd1|null|hillw&stops=wknd2|null|hilln&stops=b|null|hillw&stops=c|c_inbound|hilln&stops=c|c_outbound|hillw&stops=s|null|hillw", true);
     xhr.onreadystatechange = function() {
       if (xhr.readyState == 4) {
         printBuses(xhr.responseText); //populate page
@@ -74,7 +76,7 @@ $(document).ready(
     xhr.send();
 
     /* update bus schudule every minute */
-    window.setInterval(function test(){ xhr.open("GET", "http://runextbus.heroku.com/stop/Hill%20Center", true);
+    window.setInterval(function test(){ xhr.open("GET", "http://webservices.nextbus.com/service/publicXMLFeed?a=rutgers&command=predictionsForMultiStops&stops=h|null|hilln&stops=rexb|rexb_outbound|hillw&stops=rexb|rexb_inbound|hilln&stops=a|null|hillw&stopsps=wknd1|null|hillw&stops=wknd2|null|hilln&stops=b|null|hillw&stops=c|c_inbound|hilln&stops=c|c_outbound|hillw&stops=s|null|hillw", true);
       $("#busTimes").append("Loading...");
       xhr.send(); // once a repsonse is recieved, xhr will call the xhr.onreadystatechange function defined above
     }, 60000);
